@@ -2,22 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>V1_Website_LH</title>
+    <title>Du hast es in der Hand!</title>
 </head>
 <body>
-<h1>Seltene Erden im Smartphone</h1>
-<h3>Einführung</h3>
-<p>Im Folgenden können Sie seltene Erden auswählen, welche am häufigsten im Smartphone vorkommen.<br>
-    Auf der interaktiven Weltkarte werden Ihnen die Ländern mit dem größten Vorkommen dieser seltenen<br>
-    Erden angezeigt, sowie bis wann die Ressource vollstöndig abgebaut sein wird.</p>
-<h3>Verteilung der seltenen Erden auf der Welt</h3>
+<h1>Du hast es in der Hand!</h1>
+<h2>Seltene Erden im Smartphone</h2>
+<p>In einer Welt, in der Smartphones zu einem unverzichtbaren Teil unseres Alltags geworden sind,
+    ist es wichtiger denn je, die Rohstoffe, die in diesen Geräten stecken, genauer unter die Lupe
+    zu nehmen. Diese wertvollen Materialien sind nicht nur für die Funktionalität unserer Smartphones
+    entscheidend, sondern auch endlich und oft unter ökologisch und sozial bedenklichen Bedingungen
+    abgebaut. Auf unserer Website informieren wir dich über die Verfügbarkeit und Endlichkeit dieser Rohstoffe.
+    Wir zeigen auf, welche Materialien in deinem Smartphone verbaut sind, wo sie herkommen und welche
+    Auswirkungen ihr Abbau auf Umwelt und Gesellschaft hat. Gemeinsam können wir ein Bewusstsein für
+    die Ressourcen schaffen, die wir täglich nutzen, und Verantwortung für eine nachhaltige
+    Zukunft übernehmen.</p>
+<h4>Über welchen Rohstoff möchtest du mehr erfahren?</h4>
+<button id="buttonKobalt">Kobalt</button>
+<button id="buttonTantal">Tantal</button>
+<button id="buttonWolfram">Wolfram</button>
+<button id="buttonZinn">Zinn</button>
+<div id="elementContainerKobalt"></div>
+
 <p>Testbild:</p>
 <img src="images/Weltkarte_Wikipedia.jpg" alt="Weltkarte" width="300">
+<div id="textContainerKobalt"></div>
 <style>
-    h1{
-        background-color: beige;
+    p{
+        hyphens: auto;
+        text-align: justify;
+        width: 50%;
+    }
+    #textContainerKobalt{
+        hyphens: auto;
+        text-align: justify;
+        width: 50%;
     }
 </style>
+<script>
+    const elementKobalt = document.createElement("elementKobalt"); //Text Element erstellt
+    elementKobalt.textContent = "China";
+    const textKobalt = document.createElement("textKobalt"); //Text Element erstellt
+    textKobalt.textContent = "Der Rohstoff Kobalt wird noch 49 Jahre reichen. Kobalt ist wichtig für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.";
+    document.getElementById("buttonKobalt").addEventListener("click", function() {
+        document.getElementById("elementContainerKobalt").appendChild(elementKobalt); //Text Element wird bei Klicken des Buttons angezeigt
+        document.getElementById("textContainerKobalt").appendChild(textKobalt);
+    });
+</script>
 
 </body>
 </html>
