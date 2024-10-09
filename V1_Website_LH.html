@@ -24,10 +24,16 @@
 <button id="buttonWolfram">Wolfram</button>
 <button id="buttonZinn">Zinn</button> </div>
 <div id="timerElementKobalt" style="display: none;">China</div>
+<div id="timerElementTantal" style="display: none;">China</div>
+<div id="timerElementWolfram" style="display: none;">China</div>
+<div id="timerElementZinn" style="display: none;">China</div>
 
 <img id="weltkarte" src="images/Weltkarte pixabay.png" alt="Weltkarte" width="70%">
 <div id="infoBox" width="20%">blablabla Platzhalter</div>
 <div id="timerTextKobalt" style="display: none;">Der Rohstoff Kobalt wird noch 49 Jahre reichen. Kobalt ist wichtig für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.</div>
+<div id="timerTextTantal" style="display: none;">Der Rohstoff Tantal wird noch xx Jahre reichen. Kobalt ist wichtig für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.</div>
+<div id="timerTextWolfram" style="display: none;">Der Rohstoff Wolfram wird noch xx Jahre reichen. Kobalt ist wichtig für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.</div>
+<div id="timerTextZinn" style="display: none;">Der Rohstoff Zinn wird noch xx Jahre reichen. Kobalt ist wichtig für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.</div>
 
 <style>
     p{
@@ -35,7 +41,7 @@
         text-align: justify;
         width: 97%;
     }
-    #timerTextKobalt{
+    #timerTextKobalt, #timerTextTantal, #timerTextWolfram, #timerTextZinn{
         hyphens: auto;
         text-align: justify;
         width: 50%;
@@ -55,6 +61,15 @@
     document.getElementById("buttonKobalt").addEventListener("click", function() {
         timerTextZuRohstoffenAnzeigen('timerElementKobalt', 'timerTextKobalt');
     });
+    document.getElementById("buttonTantal").addEventListener("click", function() {
+        timerTextZuRohstoffenAnzeigen('timerElementTantal', 'timerTextTantal');
+    });
+    document.getElementById("buttonWolfram").addEventListener("click", function() {
+        timerTextZuRohstoffenAnzeigen('timerElementWolfram', 'timerTextWolfram');
+    });
+    document.getElementById("buttonZinn").addEventListener("click", function() {
+        timerTextZuRohstoffenAnzeigen('timerElementZinn', 'timerTextZinn');
+    });
     function timerTextZuRohstoffenAnzeigen(elementRohstoff, textRohstoff){
         var element = document.getElementById(elementRohstoff);
         element.style.display = 'block';
@@ -63,7 +78,7 @@
         setTimeout(function() {
             element.style.display = 'none';
             text.style.display = 'none';
-        }, 5000);
+        }, 10000);
     }
 </script>
 
