@@ -23,10 +23,18 @@
 <button id="buttonTantal">Tantal</button>
 <button id="buttonWolfram">Wolfram</button>
 <button id="buttonZinn">Zinn</button> </div>
-<div id="timerElementKobalt" style="display: none;">China</div>
-<div id="timerElementTantal" style="display: none;">China</div>
-<div id="timerElementWolfram" style="display: none;">China</div>
-<div id="timerElementZinn" style="display: none;">China</div>
+<div id="timerElementKobalt1" style="display: none;">Dem. Rep. Kongo</div>
+<div id="timerElementKobalt2" style="display: none;">China</div>
+<div id="timerElementKobalt3" style="display: none;">Russland</div>
+<div id="timerElementTantal1" style="display: none;">Ruanda</div>
+<div id="timerElementTantal2" style="display: none;">Dem. Rep. Kongo</div>
+<div id="timerElementTantal3" style="display: none;">Brasilien</div>
+<div id="timerElementWolfram1" style="display: none;">China</div>
+<div id="timerElementWolfram2" style="display: none;">Vietnam</div>
+<div id="timerElementWolfram3" style="display: none;">Russland</div>
+<div id="timerElementZinn1" style="display: none;">China</div>
+<div id="timerElementZinn2" style="display: none;">Indonesien</div>
+<div id="timerElementZinn3" style="display: none;">Peru</div>
 
 <img id="weltkarte" src="images/Weltkarte pixabay.png" alt="Weltkarte" width="70%">
 <div id="infoBox" width="20%">blablabla Platzhalter</div>
@@ -59,24 +67,30 @@
 
 <script>
     document.getElementById("buttonKobalt").addEventListener("click", function() {
-        timerTextZuRohstoffenAnzeigen('timerElementKobalt', 'timerTextKobalt');
+        timerTextZuRohstoffenAnzeigen('timerElementKobalt1', 'timerElementKobalt2', 'timerElementKobalt3', 'timerTextKobalt');
     });
     document.getElementById("buttonTantal").addEventListener("click", function() {
-        timerTextZuRohstoffenAnzeigen('timerElementTantal', 'timerTextTantal');
+        timerTextZuRohstoffenAnzeigen('timerElementTantal1', 'timerElementTantal2', 'timerElementTantal3', 'timerTextTantal');
     });
     document.getElementById("buttonWolfram").addEventListener("click", function() {
-        timerTextZuRohstoffenAnzeigen('timerElementWolfram', 'timerTextWolfram');
+        timerTextZuRohstoffenAnzeigen('timerElementWolfram1', 'timerElementWolfram2', 'timerElementWolfram3', 'timerTextWolfram');
     });
     document.getElementById("buttonZinn").addEventListener("click", function() {
-        timerTextZuRohstoffenAnzeigen('timerElementZinn', 'timerTextZinn');
+        timerTextZuRohstoffenAnzeigen('timerElementZinn1', 'timerElementZinn2', 'timerElementZinn3', 'timerTextZinn');
     });
-    function timerTextZuRohstoffenAnzeigen(elementRohstoff, textRohstoff){
-        var element = document.getElementById(elementRohstoff);
-        element.style.display = 'block';
+    function timerTextZuRohstoffenAnzeigen(elementRohstoff1, elementRohstoff2, elementRohstoff3, textRohstoff){
+        var element1 = document.getElementById(elementRohstoff1);
+        element1.style.display = 'block';
+        var element2 = document.getElementById(elementRohstoff2);
+        element2.style.display = 'block';
+        var element3 = document.getElementById(elementRohstoff3);
+        element3.style.display = 'block';
         var text = document.getElementById(textRohstoff);
         text.style.display = 'block';
         setTimeout(function() {
-            element.style.display = 'none';
+            element1.style.display = 'none';
+            element2.style.display = 'none';
+            element3.style.display = 'none';
             text.style.display = 'none';
         }, 10000);
     }
