@@ -23,30 +23,45 @@
     Zukunft übernehmen.</p>
 
 <div id="buttons">
-<h4>Über welchen Rohstoff möchtest du mehr erfahren?</h4>
-<button id="buttonKobalt">Kobalt</button>
-<button id="buttonTantal">Tantal</button>
-<button id="buttonWolfram">Wolfram</button>
-<button id="buttonZinn">Zinn</button> </div>
-<div id="timerElementKobalt1" style="display: none;">Dem. Rep. Kongo</div>
-<div id="timerElementKobalt2" style="display: none;">China</div>
-<div id="timerElementKobalt3" style="display: none;">Russland</div>
-<div id="timerElementTantal1" style="display: none;">Ruanda</div>
-<div id="timerElementTantal2" style="display: none;">Dem. Rep. Kongo</div>
-<div id="timerElementTantal3" style="display: none;">Brasilien</div>
-<div id="timerElementWolfram1" style="display: none;">China</div>
-<div id="timerElementWolfram2" style="display: none;">Vietnam</div>
-<div id="timerElementWolfram3" style="display: none;">Russland</div>
-<div id="timerElementZinn1" style="display: none;">China</div>
-<div id="timerElementZinn2" style="display: none;">Indonesien</div>
-<div id="timerElementZinn3" style="display: none;">Peru</div>
+    <h4>Über welchen Rohstoff möchtest du mehr erfahren?</h4>
+    <button id="buttonKobalt">Kobalt</button>
+    <button id="buttonTantal">Tantal</button>
+    <button id="buttonWolfram">Wolfram</button>
+    <button id="buttonZinn">Zinn</button>
+</div>
+<div id="mapContainer">
+    <img id="weltkarte" src="images/Weltkarte pixabay.png" alt="Weltkarte" width="70%">
+    <div id="timerElementKobalt1" style="display: none;">Dem. Rep. Kongo</div>
+    <div id="timerElementKobalt2" style="display: none;">China</div>
+    <div id="timerElementTantal2" style="display: none;">Dem. Rep. Kongo</div>
+    <div id="timerElementTantal1" style="display: none;">Ruanda</div>
+    <div id="timerElementKobalt3" style="display: none;">Russland</div>
+    <div id="timerElementTantal3" style="display: none;">Brasilien</div>
+    <div id="timerElementWolfram2" style="display: none;">Vietnam</div>
+    <div id="timerElementWolfram1" style="display: none;">China</div>
+    <div id="timerElementZinn1" style="display: none;">China</div>
+    <div id="timerElementZinn2" style="display: none;">Indonesien</div>
+    <div id="timerElementZinn3" style="display: none;">Peru</div>
+    <div id="timerElementWolfram3" style="display: none;">Russland</div>
+</div>
 
-<img id="weltkarte" src="images/Weltkarte pixabay.png" alt="Weltkarte" width="70%">
 <div id="infoBox" width="20%">blablabla Platzhalter</div>
-<div id="timerTextKobalt" style="display: none;">Der Rohstoff Kobalt wird noch 49 Jahre reichen. Kobalt ist wichtig für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.</div>
-<div id="timerTextTantal" style="display: none;">Der Rohstoff Tantal wird noch xx Jahre reichen. Kobalt ist wichtig für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.</div>
-<div id="timerTextWolfram" style="display: none;">Der Rohstoff Wolfram wird noch xx Jahre reichen. Kobalt ist wichtig für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.</div>
-<div id="timerTextZinn" style="display: none;">Der Rohstoff Zinn wird noch xx Jahre reichen. Kobalt ist wichtig für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.</div>
+<div id="timerTextKobalt" style="display: none;">Der Rohstoff Kobalt wird noch 49 Jahre reichen. Kobalt ist wichtig für
+    ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes
+    Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.
+</div>
+<div id="timerTextTantal" style="display: none;">Der Rohstoff Tantal wird noch xx Jahre reichen. Kobalt ist wichtig für
+    ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes
+    Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.
+</div>
+<div id="timerTextWolfram" style="display: none;">Der Rohstoff Wolfram wird noch xx Jahre reichen. Kobalt ist wichtig
+    für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global
+    etabliertes Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.
+</div>
+<div id="timerTextZinn" style="display: none;">Der Rohstoff Zinn wird noch xx Jahre reichen. Kobalt ist wichtig für ein
+    Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes
+    Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.
+</div>
 
 <style>
     nav a {
@@ -78,11 +93,19 @@
         width: 50%;
     }
 
+    #mapContainer{
+        position: relative; /* Macht das Bild zum relativen Referenzpunkt */
+        display: inline-block; /* Container passt sich der Höhe des Bildes an */
+    }
+
     #weltkarte{
         float: left;
     }
 
-    #kongo {
+    #timerElementKobalt1{
+        position: absolute;
+        bottom: 45%; /* vom oberen Rand des Containers */
+        left: 35%; /* vom linken Rand des Containers */
         display: none;
     }
 
