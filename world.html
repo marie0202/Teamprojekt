@@ -29,38 +29,41 @@
     <button id="buttonWolfram">Wolfram</button>
     <button id="buttonZinn">Zinn</button>
 </div>
-<div id="mapContainer">
-    <img id="weltkarte" src="images/Weltkarte pixabay.png" alt="Weltkarte" width="70%">
-    <div id="timerElementKobalt1" style="display: none;">Dem. Rep. Kongo</div>
-    <div id="timerElementKobalt2" style="display: none;">China</div>
-    <div id="timerElementKobalt3" style="display: none;">Russland</div>
-    <div id="timerElementTantal1" style="display: none;">Ruanda</div>
-    <div id="timerElementTantal2" style="display: none;">Dem. Rep. Kongo</div>
-    <div id="timerElementTantal3" style="display: none;">Brasilien</div>
-    <div id="timerElementWolfram1" style="display: none;">China</div>
-    <div id="timerElementWolfram2" style="display: none;">Vietnam</div>
-    <div id="timerElementWolfram3" style="display: none;">Russland</div>
-    <div id="timerElementZinn1" style="display: none;">China</div>
-    <div id="timerElementZinn2" style="display: none;">Indonesien</div>
-    <div id="timerElementZinn3" style="display: none;">Peru</div>
-</div>
-
-<div id="infoBox" width="20%">blablabla Platzhalter</div>
-<div id="timerTextKobalt" style="display: none;">Der Rohstoff Kobalt wird noch 49 Jahre reichen. Kobalt ist wichtig für
-    ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes
-    Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.
-</div>
-<div id="timerTextTantal" style="display: none;">Der Rohstoff Tantal wird noch xx Jahre reichen. Kobalt ist wichtig für
-    ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes
-    Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.
-</div>
-<div id="timerTextWolfram" style="display: none;">Der Rohstoff Wolfram wird noch xx Jahre reichen. Kobalt ist wichtig
-    für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global
-    etabliertes Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.
-</div>
-<div id="timerTextZinn" style="display: none;">Der Rohstoff Zinn wird noch xx Jahre reichen. Kobalt ist wichtig für ein
-    Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes
-    Recycling, trotzdem gilt Kobalr als kritischer Rohstoff für die EU.
+<div id="contentContainer">
+    <div id="mapContainer">
+        <img id="weltkarte" src="images/Weltkarte pixabay.png" alt="Weltkarte" width="70%">
+        <div id="timerElementKobalt1" style="display: none;">Dem. Rep. Kongo</div>
+        <div id="timerElementKobalt2" style="display: none;">China</div>
+        <div id="timerElementKobalt3" style="display: none;">Russland</div>
+        <div id="timerElementTantal1" style="display: none;">Ruanda</div>
+        <div id="timerElementTantal2" style="display: none;">Dem. Rep. Kongo</div>
+        <div id="timerElementTantal3" style="display: none;">Brasilien</div>
+        <div id="timerElementWolfram1" style="display: none;">China</div>
+        <div id="timerElementWolfram2" style="display: none;">Vietnam</div>
+        <div id="timerElementWolfram3" style="display: none;">Russland</div>
+        <div id="timerElementZinn1" style="display: none;">China</div>
+        <div id="timerElementZinn2" style="display: none;">Indonesien</div>
+        <div id="timerElementZinn3" style="display: none;">Peru</div>
+    </div>
+    <div id="textContainer">
+        <div id="infoBox" class="alwaysVisible">blablabla Platzhalter</div>
+        <div id="timerTextKobalt" style="display: none;">Der Rohstoff Kobalt wird noch 49 Jahre reichen. Kobalt ist wichtig für
+            ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes
+            Recycling, trotzdem gilt Kobalt als kritischer Rohstoff für die EU.
+        </div>
+        <div id="timerTextTantal" style="display: none;">Der Rohstoff Tantal wird noch xx Jahre reichen. Kobalt ist wichtig für
+            ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes
+            Recycling, trotzdem gilt Kobalt als kritischer Rohstoff für die EU.
+        </div>
+        <div id="timerTextWolfram" style="display: none;">Der Rohstoff Wolfram wird noch xx Jahre reichen. Kobalt ist wichtig
+            für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global
+            etabliertes Recycling, trotzdem gilt Kobalt als kritischer Rohstoff für die EU.
+        </div>
+        <div id="timerTextZinn" style="display: none;">Der Rohstoff Zinn wird noch xx Jahre reichen. Kobalt ist wichtig für ein
+            Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes
+            Recycling, trotzdem gilt Kobalt als kritischer Rohstoff für die EU.
+        </div>
+    </div>
 </div>
 
 <style>
@@ -87,91 +90,89 @@
         cursor: pointer;
         margin: 10px;
     }
-    #timerTextKobalt, #timerTextTantal, #timerTextWolfram, #timerTextZinn{
-        hyphens: auto;
-        text-align: justify;
-        width: 50%;
+    #contentContainer {
+        display: flex; /* Stellt die Inhalte nebeneinander */
+        align-items: flex-start; /* Text und Bild oben ausrichten */
+        gap: 5px; /* Abstand zwischen Bild und Text */
+        width: 100%;
     }
-
+    #textContainer {
+        width: 35%; /* Textcontainer nimmt 35% der Breite */
+        padding-left: 20px; /* Abstand zwischen Bild und Text */
+        text-align: justify;
+    }
+    #textContainer div {
+        hyphens: auto;
+        display: none; /* Texte sollen wie gehabt nur sichtbar sein, wenn sie aufgerufen werden */
+    }
+    #textContainer .alwaysVisible{
+        display: block; /* InfoBox immer sichtbar*/
+    }
+    #infoBox {
+        width: 50%; /* Breite auf 20% gesetzt */
+        gap: 5px; /* Abstand zwischen Bild und Text */
+    }
     #mapContainer{
+        width: 65%;
         position: relative; /* Macht das Bild zum relativen Referenzpunkt */
         display: inline-block; /* Container passt sich der Höhe des Bildes an */
     }
-
     #weltkarte{
+        width: 100%;
         float: left;
     }
-
-    #timerElementKobalt1{
-        position: absolute;
-        bottom: 45%; /* vom oberen Rand des Containers */
-        left: 33%; /* vom linken Rand des Containers */
-        display: none;
+    #timerTextKobalt, #timerTextTantal, #timerTextWolfram, #timerTextZinn{
+        hyphens: auto;
+        text-align: justify;
+        width: 90%;
     }
-    #timerElementKobalt2{
+    #timerElementKobalt1, #timerElementTantal2{
+        position: absolute;
+        bottom: 36%; /* vom oberen Rand des Containers */
+        left: 50%; /* vom linken Rand des Containers */
+        display: none;
+        width: 10%; /* ür Zeilenumbruch */
+    }
+    #timerElementKobalt2, #timerElementWolfram1, #timerElementZinn1{
         position: absolute;
         bottom: 62%;
-        left: 55%;
+        left: 78%;
         display: none;
     }
-    #timerElementKobalt3{
+    #timerElementKobalt3, #timerElementWolfram3{
         position: absolute;
         bottom: 80%;
-        left: 50%;
+        left: 67%;
         display: none;
     }
     #timerElementTantal1{
         position: absolute;
-        bottom: 48%;
-        left: 37%;
-        display: none;
-    }
-    #timerElementTantal2{
-        position: absolute;
         bottom: 45%;
-        left: 33%;
+        left: 54%;
         display: none;
     }
     #timerElementTantal3{
         position: absolute;
         bottom: 32%;
-        left: 18%;
-        display: none;
-    }
-    #timerElementWolfram1{
-        position: absolute;
-        bottom: 62%;
-        left: 55%;
+        left: 25%;
         display: none;
     }
     #timerElementWolfram2{
         position: absolute;
-        bottom: 50%;
-        left: 58%;
-        display: none;
-    }
-    #timerElementWolfram3{
-        position: absolute;
-        bottom: 80%;
-        left: 50%;
-        display: none;
-    }
-    #timerElementZinn1{
-        position: absolute;
-        bottom: 62%;
-        left: 55%;
+        bottom: 49%;
+        left: 83%;
         display: none;
     }
     #timerElementZinn2{
         position: absolute;
-        bottom: 35%;
-        left: 55%;
+        bottom: 34%;
+        left: 80%;
         display: none;
     }
     #timerElementZinn3{
         position: absolute;
         bottom: 28%;
-        left: 14%;
+        left: 18%;
         display: none;
     }
 
