@@ -2,18 +2,19 @@ var activeButton = null; // Speichert den aktuell aktiven Button
 var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
 
     document.getElementById("buttonKobalt").addEventListener("click", function() {
-        inhalteButtonAnzeigen('buttonKobalt', 'timerElementKobalt1', 'timerElementKobalt2', 'timerElementKobalt3', 'timerTextKobalt');
+        inhalteButtonAnzeigenVonWebsite('buttonKobalt', 'timerElementKobalt1', 'timerElementKobalt2', 'timerElementKobalt3', 'timerTextKobalt');
     });
     document.getElementById("buttonTantal").addEventListener("click", function() {
-        inhalteButtonAnzeigen('buttonTantal', 'timerElementTantal1', 'timerElementTantal2', 'timerElementTantal3', 'timerTextTantal');
+        inhalteButtonAnzeigenVonWebsite('buttonTantal', 'timerElementTantal1', 'timerElementTantal2', 'timerElementTantal3', 'timerTextTantal');
     });
     document.getElementById("buttonWolfram").addEventListener("click", function() {
-        inhalteButtonAnzeigen('buttonWolfram', 'timerElementWolfram1', 'timerElementWolfram2', 'timerElementWolfram3', 'timerTextWolfram');
+        inhalteButtonAnzeigenVonWebsite('buttonWolfram', 'timerElementWolfram1', 'timerElementWolfram2', 'timerElementWolfram3', 'timerTextWolfram');
     });
     document.getElementById("buttonZinn").addEventListener("click", function() {
-        inhalteButtonAnzeigen('buttonZinn', 'timerElementZinn1', 'timerElementZinn2', 'timerElementZinn3', 'timerTextZinn');
+        inhalteButtonAnzeigenVonWebsite('buttonZinn', 'timerElementZinn1', 'timerElementZinn2', 'timerElementZinn3', 'timerTextZinn');
     });
-    function inhalteButtonAnzeigen(buttonID, elementRohstoff1, elementRohstoff2, elementRohstoff3, textRohstoff){
+    const socket = io("http://localhost:5000");
+    function inhalteButtonAnzeigenVonWebsite(buttonID, elementRohstoff1, elementRohstoff2, elementRohstoff3, textRohstoff){
         // Setze den vorherigen Button zurück, falls einer aktiv ist
         if (activeButton) {
             resetButton(activeButton);
@@ -30,7 +31,6 @@ var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
         document.getElementById(textRohstoff).style.display = 'block';
 
         //Information an den Server senden (API)
-        const socket = io("http://localhost:5000");
         socket.emit('activate_led', { button: buttonID })
         /*fetch("http://127.0.0.1:5000/trigger-led", {
                 method: "POST",
@@ -45,6 +45,33 @@ var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
             resetButton(buttonID);
         }, 10000);
     }
+function inhalteButtonAnzeigenVonPi(buttonID, elementRohstoff1, elementRohstoff2, elementRohstoff3, textRohstoff){
+    // Setze den vorherigen Button zurück, falls einer aktiv ist
+    if (activeButton) {
+        resetButton(activeButton);
+    }
+
+    //Information vom Pi empfangen
+
+    // Setze den neuen aktiven Button
+    activeButton = buttonID;
+
+    var button = document.getElementById(buttonID);
+    button.style.backgroundColor = "darkgrey"; // Farbe ändern
+
+    document.getElementById(elementRohstoff1).style.display = 'block';
+    document.getElementById(elementRohstoff2).style.display = 'block';
+    document.getElementById(elementRohstoff3).style.display = 'block';
+    document.getElementById(textRohstoff).style.display = 'block';
+
+    timeoutID = setTimeout(function() {
+        resetButton(buttonID);
+    }, 10000);
+}
+socket.on('led_status', function(data) {
+    console.log('LED ${data.button} ist ${data.status}');
+    //inhalteButtonAnzeigenVonPi()
+});
     function resetButton(buttonID) {
         // Setze die Farbe zurück
         var button = document.getElementById(buttonID);
@@ -61,6 +88,7 @@ var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
         clearTimeout(timeoutID);
     }
 // URL der API auf dem Raspberry Pi oder Server
+const apiUrl = 'http://localhost:5000/receive-data';
 //const apiUrl = 'http://<dein-raspberry-pi-ip>:5000/receive-data';
 
 // Funktion zum Abrufen Daten von der API
@@ -79,7 +107,7 @@ var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
         }
 
         const data = await response.json();
-        const dataString = String(data);
+        const dataString = json.dumps(data);
         inhalteButtonAnzeigen('button'+dataString, 'timerElement'+dataString+'1',
             'timerElement'+dataString+'2', 'timerElement'+dataString+'3',
             'timerText'+dataString);
