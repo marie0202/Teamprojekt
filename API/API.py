@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Beispiel-Endpunkt für GET-Anfragen
 #Um Daten abzurufen z.B. Zustand der LEDs (kommt aber als Info aktuell nicht von der Website
@@ -16,18 +18,23 @@ def trigger_led():
     data = request.get_json(force=True)  # Holt die Daten aus der Anfrage
 
     #.strip() entfernt Leerzeichen am Anfang / Ende des Strings, sonst funktioniert das IF nicht!
-    led_name = data.get("led").strip()
-    print(f"Received LED trigger for: {led_name}")
+    button_name = data.get("button").strip()
+    print(f"Received LED trigger for: {button_name}")
 
-    if led_name == "led 1":
-        print("Länder: 1,2,3")
-    elif led_name == "led2":
-        print("Länder 2,3")
+    if button_name == "buttonKobalt":
+        print("Kobalt")
+    elif button_name == "buttonTantal":
+        print("Tantal")
+    elif button_name == "buttonWolfram":
+        print("Wolfram")
+    elif button_name == "buttonZinn":
+        print("Zinn")
     else:
-        print("Länder 3")
+        print("Ungültiger Button!")
 
     #Rückgabe an den Client
-    return jsonify({"message": f"{led_name} triggered"}), 200
+    return jsonify({"message": f"{button_name} triggered"}), 200
 
 if __name__ == '__main__':
+    #To-Do: host="0.0.0.0", wenn Anfragen auch von anderen PCs kommen!
     app.run(host='127.0.0.1', port=5000,debug=True)
