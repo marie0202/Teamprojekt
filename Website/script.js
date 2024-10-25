@@ -30,14 +30,16 @@ var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
         document.getElementById(textRohstoff).style.display = 'block';
 
         //Information an den Server senden (API)
-        fetch("http://127.0.0.1:5000/trigger-led", {
+        const socket = io("http://localhost:5000");
+        socket.emit('activate_led', { button: buttonID })
+        /*fetch("http://127.0.0.1:5000/trigger-led", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({ button: buttonID })
                 })
             .then(response => response.json())
             .then(data => {console.log("Response:", data);})
-            .catch(error => {console.error("Error:", error); });
+            .catch(error => {console.error("Error:", error); });*/
 
         timeoutID = setTimeout(function() {
             resetButton(buttonID);
@@ -59,10 +61,10 @@ var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
         clearTimeout(timeoutID);
     }
 // URL der API auf dem Raspberry Pi oder Server
-const apiUrl = 'http://<dein-raspberry-pi-ip>:5000/receive-data';
+//const apiUrl = 'http://<dein-raspberry-pi-ip>:5000/receive-data';
 
 // Funktion zum Abrufen Daten von der API
-async function fetchData() {
+/*async function fetchData() {
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',
@@ -88,4 +90,4 @@ async function fetchData() {
 }
 
 // Beim Laden der Seite Daten abrufen
-fetchData();
+fetchData();*/
