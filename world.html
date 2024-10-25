@@ -211,6 +211,16 @@
         document.getElementById(elementRohstoff3).style.display = 'block';
         document.getElementById(textRohstoff).style.display = 'block';
 
+        //Information an den Server senden (API)
+        fetch("http://127.0.0.1:5000/trigger-led", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ led: buttonID })
+                })
+            .then(response => response.json())
+            .then(data => {console.log("Response:", data);})
+            .catch(error => {console.error("Error:", error); });
+
         timeoutID = setTimeout(function() {
             resetButton(buttonID);
         }, 10000);
