@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Über uns</title>
+    <style>
+        nav a {
+            text-decoration: none; /* Entfernt die Unterstreichung */
+            background-color: lightgray;
+            font-weight: bold; /* Macht den Text fett */
+            padding: 10px 20px; /* Fügt Innenabstände um die Links hinzu */
+            cursor: pointer;
+            margin: 10px;
+        }
+        nav a:visited {
+            color: inherit; /* Setzt die Farbe auf die Standardfarbe zurück */
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="world.html">Weltkarte</a>
+    <a href="allResources.html">Alle Rohstoffe</a>
+    <a href="about.html">Über uns</a>
+</nav>
+<h1>Über uns</h1>
+<p>Wir sind drei Wirtschaftsinformatik Studierende der HTWG Konstanz und beschäftigen uns in unserem Teamprojekt mit der Endlichkeit von Rohstoffen,
+    Im vorherigen Semester ist im Rahmen des Projektes bereits ein Prototyp einer Weltkarte entstanden. Diese Weltkarte enthält 4 Knöpfe, die jeweils
+    einen, für die Smartphone relevanten Rohstoff, repräsentieren. Wird einer diese Knöpfe gedrückt, leuchtet der Name der Länder auf, in denen die
+    größe Menge dieser Stoffe abgebaut wird. Außerdem zeigt ein Bildschirm wie lange die Reserven dieses Stoffes noch halten werden.
+
+    Die Umsetzung erfolgt über einen RaspberryPi, der sowohl die Knöpfe als auch die LEDs kontrolliert.
+
+    <br><br>Anhand dieser Website soll nun der Prototyp nun einen digitalen Zwilling bekommen. Unsere interaktive Website zeigt ebenfalls auf Knopfdruck die Länder,
+    indem die Stoffe abgebaut werden. Außerdem interagieren Website und Prototyp miteinander.
+    Somit können die LEDs auf der Weltkarte auch dann leuchten, wenn der Knopf lediglich auf der Website gedrückt wurde.
+
+</p>
+
+<img id="prototyp" src="images/Prototyp.png" alt="Prototyp" width="70%">
+
+</body>
+</html>
