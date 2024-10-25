@@ -1,0 +1,108 @@
+nav a {
+    text-decoration: none; /* Entfernt die Unterstreichung */
+    background-color: lightgray;
+    font-weight: bold; /* Macht den Text fett */
+    padding: 10px 20px; /* Fügt Innenabstände um die Links hinzu */
+    cursor: pointer;
+    margin: 10px;
+}
+nav a:visited {
+    color: inherit; /* Setzt die Farbe auf die Standardfarbe zurück */
+}
+p{
+    hyphens: auto;
+    text-align: justify;
+    width: 97%;
+}
+#buttonKobalt, #buttonTantal, #buttonWolfram, #buttonZinn {
+    background-color: lightgray; /* Standardfarbe */
+    padding: 10px 20px;
+    border: black;
+    cursor: pointer;
+    margin: 10px;
+}
+#contentContainer {
+    display: flex; /* Stellt die Inhalte nebeneinander */
+    align-items: flex-start; /* Text und Bild oben ausrichten */
+    gap: 5px; /* Abstand zwischen Bild und Text */
+    width: 100%;
+}
+#textContainer {
+    width: 35%; /* Textcontainer nimmt 35% der Breite */
+    padding-left: 20px; /* Abstand zwischen Bild und Text */
+    text-align: justify;
+}
+#textContainer div {
+    hyphens: auto;
+    display: none; /* Texte sollen wie gehabt nur sichtbar sein, wenn sie aufgerufen werden */
+}
+#textContainer .alwaysVisible{
+    display: block; /* InfoBox immer sichtbar*/
+}
+#infoBox {
+    width: 50%; /* Breite auf 20% gesetzt */
+    gap: 5px; /* Abstand zwischen Bild und Text */
+}
+#mapContainer{
+    width: 65%;
+    position: relative; /* Macht das Bild zum relativen Referenzpunkt */
+    display: inline-block; /* Container passt sich der Höhe des Bildes an */
+}
+#weltkarte{
+    width: 100%;
+    float: left;
+}
+#timerTextKobalt, #timerTextTantal, #timerTextWolfram, #timerTextZinn{
+    hyphens: auto;
+    text-align: justify;
+    width: 90%;
+}
+#timerElementKobalt1, #timerElementTantal2{
+    position: absolute;
+    bottom: 36%; /* vom oberen Rand des Containers */
+    left: 50%; /* vom linken Rand des Containers */
+    display: none;
+    width: 10%; /* ür Zeilenumbruch */
+}
+#timerElementKobalt2, #timerElementWolfram1, #timerElementZinn1{
+    position: absolute;
+    bottom: 62%;
+    left: 78%;
+    display: none;
+}
+#timerElementKobalt3, #timerElementWolfram3{
+    position: absolute;
+    bottom: 80%;
+    left: 67%;
+    display: none;
+}
+#timerElementTantal1{
+    position: absolute;
+    bottom: 45%;
+    left: 54%;
+    display: none;
+}
+#timerElementTantal3{
+    position: absolute;
+    bottom: 32%;
+    left: 25%;
+    display: none;
+}
+#timerElementWolfram2{
+    position: absolute;
+    bottom: 49%;
+    left: 83%;
+    display: none;
+}
+#timerElementZinn2{
+    position: absolute;
+    bottom: 34%;
+    left: 80%;
+    display: none;
+}
+#timerElementZinn3{
+    position: absolute;
+    bottom: 28%;
+    left: 18%;
+    display: none;
+}
