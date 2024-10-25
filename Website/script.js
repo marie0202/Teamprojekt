@@ -1,5 +1,5 @@
 var activeButton = null; // Speichert den aktuell aktiven Button
-    var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
+var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
 
     document.getElementById("buttonKobalt").addEventListener("click", function() {
         inhalteButtonAnzeigen('buttonKobalt', 'timerElementKobalt1', 'timerElementKobalt2', 'timerElementKobalt3', 'timerTextKobalt');
@@ -58,3 +58,34 @@ var activeButton = null; // Speichert den aktuell aktiven Button
         activeButton = null;
         clearTimeout(timeoutID);
     }
+// URL der API auf dem Raspberry Pi oder Server
+const apiUrl = 'http://<dein-raspberry-pi-ip>:5000/receive-data';
+
+// Funktion zum Abrufen Daten von der API
+async function fetchData() {
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ request: 'fetch' })
+        });
+
+        if (!response.ok) {
+            throw new Error('Netzwerkantwort war nicht ok');
+        }
+
+        const data = await response.json();
+        const dataString = String(data);
+        inhalteButtonAnzeigen('button'+dataString, 'timerElement'+dataString+'1',
+            'timerElement'+dataString+'2', 'timerElement'+dataString+'3',
+            'timerText'+dataString);
+    } catch (error) {
+        console.error('Fehler beim Abrufen der Daten:', error);
+        //document.getElementById('data-container').innerText = 'Fehler beim Laden der Daten.';
+    }
+}
+
+// Beim Laden der Seite Daten abrufen
+fetchData();
