@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Du hast es in der Hand!</title>
+</head>
+<body>
+<nav>
+    <a href="../world.html">Weltkarte</a>
+    <a href="../allResources.html">Alle Rohstoffe</a>
+    <a href="../about.html">Über uns</a>
+</nav>
+<h1>Du hast es in der Hand!</h1>
+<h2>Seltene Erden im Smartphone</h2>
+<p>In einer Welt, in der Smartphones zu einem unverzichtbaren Teil unseres Alltags geworden sind,
+    ist es wichtiger denn je, die Rohstoffe, die in diesen Geräten stecken, genauer unter die Lupe
+    zu nehmen. Diese wertvollen Materialien sind nicht nur für die Funktionalität unserer Smartphones
+    entscheidend, sondern auch endlich und oft unter ökologisch und sozial bedenklichen Bedingungen
+    abgebaut. Auf unserer Website informieren wir dich über die Verfügbarkeit und Endlichkeit dieser Rohstoffe.
+    Wir zeigen auf, welche Materialien in deinem Smartphone verbaut sind, wo sie herkommen und welche
+    Auswirkungen ihr Abbau auf Umwelt und Gesellschaft hat. Gemeinsam können wir ein Bewusstsein für
+    die Ressourcen schaffen, die wir täglich nutzen, und Verantwortung für eine nachhaltige
+    Zukunft übernehmen.</p>
+
+<div id="buttons">
+    <h4>Über welchen Rohstoff möchtest du mehr erfahren?</h4>
+    <button id="buttonKobalt">Kobalt</button>
+    <button id="buttonTantal">Tantal</button>
+    <button id="buttonWolfram">Wolfram</button>
+    <button id="buttonZinn">Zinn</button>
+</div>
+<div id="contentContainer">
+    <div id="mapContainer">
+        <img id="weltkarte" src="../images/Weltkarte%20pixabay.png" alt="Weltkarte" width="70%">
+        <div id="timerElementKobalt1" style="display: none;">Dem. Rep. Kongo</div>
+        <div id="timerElementKobalt2" style="display: none;">China</div>
+        <div id="timerElementKobalt3" style="display: none;">Russland</div>
+        <div id="timerElementTantal1" style="display: none;">Ruanda</div>
+        <div id="timerElementTantal2" style="display: none;">Dem. Rep. Kongo</div>
+        <div id="timerElementTantal3" style="display: none;">Brasilien</div>
+        <div id="timerElementWolfram1" style="display: none;">China</div>
+        <div id="timerElementWolfram2" style="display: none;">Vietnam</div>
+        <div id="timerElementWolfram3" style="display: none;">Russland</div>
+        <div id="timerElementZinn1" style="display: none;">China</div>
+        <div id="timerElementZinn2" style="display: none;">Indonesien</div>
+        <div id="timerElementZinn3" style="display: none;">Peru</div>
+    </div>
+    <div id="textContainer">
+        <div id="infoBox" class="alwaysVisible">blablabla Platzhalter</div>
+        <div id="timerTextKobalt" style="display: none;">Der Rohstoff Kobalt wird noch 49 Jahre reichen. Kobalt ist wichtig für
+            ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes
+            Recycling, trotzdem gilt Kobalt als kritischer Rohstoff für die EU.
+        </div>
+        <div id="timerTextTantal" style="display: none;">Der Rohstoff Tantal wird noch xx Jahre reichen. Kobalt ist wichtig für
+            ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes
+            Recycling, trotzdem gilt Kobalt als kritischer Rohstoff für die EU.
+        </div>
+        <div id="timerTextWolfram" style="display: none;">Der Rohstoff Wolfram wird noch xx Jahre reichen. Kobalt ist wichtig
+            für ein Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global
+            etabliertes Recycling, trotzdem gilt Kobalt als kritischer Rohstoff für die EU.
+        </div>
+        <div id="timerTextZinn" style="display: none;">Der Rohstoff Zinn wird noch xx Jahre reichen. Kobalt ist wichtig für ein
+            Smartphone, da es maximale Stabilität und energieeffiziente Batterien ermöglicht. Es gibt ein global etabliertes
+            Recycling, trotzdem gilt Kobalt als kritischer Rohstoff für die EU.
+        </div>
+    </div>
+</div>
+
+<style>
+    nav a {
+        text-decoration: none; /* Entfernt die Unterstreichung */
+        background-color: lightgray;
+        font-weight: bold; /* Macht den Text fett */
+        padding: 10px 20px; /* Fügt Innenabstände um die Links hinzu */
+        cursor: pointer;
+        margin: 10px;
+    }
+    nav a:visited {
+        color: inherit; /* Setzt die Farbe auf die Standardfarbe zurück */
+    }
+    p{
+        hyphens: auto;
+        text-align: justify;
+        width: 97%;
+    }
+    #buttonKobalt, #buttonTantal, #buttonWolfram, #buttonZinn {
+        background-color: lightgray; /* Standardfarbe */
+        padding: 10px 20px;
+        border: black;
+        cursor: pointer;
+        margin: 10px;
+    }
+    #contentContainer {
+        display: flex; /* Stellt die Inhalte nebeneinander */
+        align-items: flex-start; /* Text und Bild oben ausrichten */
+        gap: 5px; /* Abstand zwischen Bild und Text */
+        width: 100%;
+    }
+    #textContainer {
+        width: 35%; /* Textcontainer nimmt 35% der Breite */
+        padding-left: 20px; /* Abstand zwischen Bild und Text */
+        text-align: justify;
+    }
+    #textContainer div {
+        hyphens: auto;
+        display: none; /* Texte sollen wie gehabt nur sichtbar sein, wenn sie aufgerufen werden */
+    }
+    #textContainer .alwaysVisible{
+        display: block; /* InfoBox immer sichtbar*/
+    }
+    #infoBox {
+        width: 50%; /* Breite auf 20% gesetzt */
+        gap: 5px; /* Abstand zwischen Bild und Text */
+    }
+    #mapContainer{
+        width: 65%;
+        position: relative; /* Macht das Bild zum relativen Referenzpunkt */
+        display: inline-block; /* Container passt sich der Höhe des Bildes an */
+    }
+    #weltkarte{
+        width: 100%;
+        float: left;
+    }
+    #timerTextKobalt, #timerTextTantal, #timerTextWolfram, #timerTextZinn{
+        hyphens: auto;
+        text-align: justify;
+        width: 90%;
+    }
+    #timerElementKobalt1, #timerElementTantal2{
+        position: absolute;
+        bottom: 36%; /* vom oberen Rand des Containers */
+        left: 50%; /* vom linken Rand des Containers */
+        display: none;
+        width: 10%; /* ür Zeilenumbruch */
+    }
+    #timerElementKobalt2, #timerElementWolfram1, #timerElementZinn1{
+        position: absolute;
+        bottom: 62%;
+        left: 78%;
+        display: none;
+    }
+    #timerElementKobalt3, #timerElementWolfram3{
+        position: absolute;
+        bottom: 80%;
+        left: 67%;
+        display: none;
+    }
+    #timerElementTantal1{
+        position: absolute;
+        bottom: 45%;
+        left: 54%;
+        display: none;
+    }
+    #timerElementTantal3{
+        position: absolute;
+        bottom: 32%;
+        left: 25%;
+        display: none;
+    }
+    #timerElementWolfram2{
+        position: absolute;
+        bottom: 49%;
+        left: 83%;
+        display: none;
+    }
+    #timerElementZinn2{
+        position: absolute;
+        bottom: 34%;
+        left: 80%;
+        display: none;
+    }
+    #timerElementZinn3{
+        position: absolute;
+        bottom: 28%;
+        left: 18%;
+        display: none;
+    }
+
+
+</style>
+
+<script>
+    var activeButton = null; // Speichert den aktuell aktiven Button
+    var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
+
+    document.getElementById("buttonKobalt").addEventListener("click", function() {
+        inhalteButtonAnzeigen('buttonKobalt', 'timerElementKobalt1', 'timerElementKobalt2', 'timerElementKobalt3', 'timerTextKobalt');
+    });
+    document.getElementById("buttonTantal").addEventListener("click", function() {
+        inhalteButtonAnzeigen('buttonTantal', 'timerElementTantal1', 'timerElementTantal2', 'timerElementTantal3', 'timerTextTantal');
+    });
+    document.getElementById("buttonWolfram").addEventListener("click", function() {
+        inhalteButtonAnzeigen('buttonWolfram', 'timerElementWolfram1', 'timerElementWolfram2', 'timerElementWolfram3', 'timerTextWolfram');
+    });
+    document.getElementById("buttonZinn").addEventListener("click", function() {
+        inhalteButtonAnzeigen('buttonZinn', 'timerElementZinn1', 'timerElementZinn2', 'timerElementZinn3', 'timerTextZinn');
+    });
+    function inhalteButtonAnzeigen(buttonID, elementRohstoff1, elementRohstoff2, elementRohstoff3, textRohstoff){
+        // Setze den vorherigen Button zurück, falls einer aktiv ist
+        if (activeButton) {
+            resetButton(activeButton);
+        }
+        // Setze den neuen aktiven Button
+        activeButton = buttonID;
+
+        var button = document.getElementById(buttonID);
+        button.style.backgroundColor = "darkgrey"; // Farbe ändern
+
+        document.getElementById(elementRohstoff1).style.display = 'block';
+        document.getElementById(elementRohstoff2).style.display = 'block';
+        document.getElementById(elementRohstoff3).style.display = 'block';
+        document.getElementById(textRohstoff).style.display = 'block';
+
+        //Information an den Server senden (API)
+        fetch("http://127.0.0.1:5000/trigger-led", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ button: buttonID })
+                })
+            .then(response => response.json())
+            .then(data => {console.log("Response:", data);})
+            .catch(error => {console.error("Error:", error); });
+
+        timeoutID = setTimeout(function() {
+            resetButton(buttonID);
+        }, 10000);
+    }
+    function resetButton(buttonID) {
+        // Setze die Farbe zurück
+        var button = document.getElementById(buttonID);
+        button.style.backgroundColor = "lightgray";
+
+        // Alle zugehörigen Inhalte ausblenden
+        document.querySelectorAll("[id^='timerElement" + buttonID.replace('button', '') + "']").forEach(function(el) {
+            el.style.display = 'none';
+        });
+        document.getElementById("timerText" + buttonID.replace('button', '')).style.display = 'none';
+
+        // Setze die aktiven Variablen zurück
+        activeButton = null;
+        clearTimeout(timeoutID);
+    }
+</script>
+
+</body>
+</html>
