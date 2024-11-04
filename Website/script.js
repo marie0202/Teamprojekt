@@ -2,16 +2,16 @@ var activeButton = null; // Speichert den aktuell aktiven Button
 var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
 
     document.getElementById("buttonKobalt").addEventListener("click", function() {
-        inhalteButtonAnzeigenVonWebsite('buttonKobalt', 'timerElementKobalt1', 'timerElementKobalt2', 'timerElementKobalt3', 'timerTextKobalt');
+        inhalteButtonAnzeigenVonWebsite('buttonKobalt', 'elementKobalt1', 'elementKobalt2', 'elementKobalt3', 'textKobalt');
     });
     document.getElementById("buttonTantal").addEventListener("click", function() {
-        inhalteButtonAnzeigenVonWebsite('buttonTantal', 'timerElementTantal1', 'timerElementTantal2', 'timerElementTantal3', 'timerTextTantal');
+        inhalteButtonAnzeigenVonWebsite('buttonTantal', 'elementTantal1', 'elementTantal2', 'elementTantal3', 'textTantal');
     });
     document.getElementById("buttonWolfram").addEventListener("click", function() {
-        inhalteButtonAnzeigenVonWebsite('buttonWolfram', 'timerElementWolfram1', 'timerElementWolfram2', 'timerElementWolfram3', 'timerTextWolfram');
+        inhalteButtonAnzeigenVonWebsite('buttonWolfram', 'elementWolfram1', 'elementWolfram2', 'elementWolfram3', 'textWolfram');
     });
     document.getElementById("buttonZinn").addEventListener("click", function() {
-        inhalteButtonAnzeigenVonWebsite('buttonZinn', 'timerElementZinn1', 'timerElementZinn2', 'timerElementZinn3', 'timerTextZinn');
+        inhalteButtonAnzeigenVonWebsite('buttonZinn', 'elementZinn1', 'elementZinn2', 'elementZinn3', 'textZinn');
     });
     const socket = io("http://localhost:5000");
     function inhalteButtonAnzeigenVonWebsite(buttonID, elementRohstoff1, elementRohstoff2, elementRohstoff3, textRohstoff){

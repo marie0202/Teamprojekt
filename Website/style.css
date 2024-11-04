@@ -1,4 +1,5 @@
 nav a {
+    color: black;
     text-decoration: none; /* Entfernt die Unterstreichung */
     background-color: lightgray;
     font-weight: bold; /* Macht den Text fett */
@@ -52,55 +53,55 @@ p{
     width: 100%;
     float: left;
 }
-#timerTextKobalt, #timerTextTantal, #timerTextWolfram, #timerTextZinn{
+#textKobalt, #textTantal, #textWolfram, #textZinn{
     hyphens: auto;
     text-align: justify;
     width: 90%;
 }
-#timerElementKobalt1, #timerElementTantal2{
+#elementKobalt1, #elementTantal2{
     position: absolute;
     bottom: 36%; /* vom oberen Rand des Containers */
     left: 50%; /* vom linken Rand des Containers */
     display: none;
     width: 10%; /* ür Zeilenumbruch */
 }
-#timerElementKobalt2, #timerElementWolfram1, #timerElementZinn1{
+#elementKobalt2, #elementWolfram1, #elementZinn1{
     position: absolute;
     bottom: 62%;
     left: 78%;
     display: none;
 }
-#timerElementKobalt3, #timerElementWolfram3{
+#elementKobalt3, #elementWolfram3{
     position: absolute;
     bottom: 80%;
     left: 67%;
     display: none;
 }
-#timerElementTantal1{
+#elementTantal1{
     position: absolute;
     bottom: 45%;
     left: 54%;
     display: none;
 }
-#timerElementTantal3{
+#elementTantal3{
     position: absolute;
     bottom: 32%;
     left: 25%;
     display: none;
 }
-#timerElementWolfram2{
+#elementWolfram2{
     position: absolute;
     bottom: 49%;
     left: 83%;
     display: none;
 }
-#timerElementZinn2{
+#elementZinn2{
     position: absolute;
     bottom: 34%;
     left: 80%;
     display: none;
 }
-#timerElementZinn3{
+#elementZinn3{
     position: absolute;
     bottom: 28%;
     left: 18%;
