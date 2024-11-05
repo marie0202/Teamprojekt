@@ -2,19 +2,19 @@ var activeButton = null; // Speichert den aktuell aktiven Button
 var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
 
     document.getElementById("buttonKobalt").addEventListener("click", function() {
-        inhalteButtonAnzeigenVonWebsite('buttonKobalt', 'elementKobalt1', 'elementKobalt2', 'elementKobalt3', 'textKobalt');
+        inhalteButtonAnzeigenVonWebsite('buttonKobalt');
     });
     document.getElementById("buttonTantal").addEventListener("click", function() {
-        inhalteButtonAnzeigenVonWebsite('buttonTantal', 'elementTantal1', 'elementTantal2', 'elementTantal3', 'textTantal');
+        inhalteButtonAnzeigenVonWebsite('buttonTantal');
     });
     document.getElementById("buttonWolfram").addEventListener("click", function() {
-        inhalteButtonAnzeigenVonWebsite('buttonWolfram', 'elementWolfram1', 'elementWolfram2', 'elementWolfram3', 'textWolfram');
+        inhalteButtonAnzeigenVonWebsite('buttonWolfram');
     });
     document.getElementById("buttonZinn").addEventListener("click", function() {
-        inhalteButtonAnzeigenVonWebsite('buttonZinn', 'elementZinn1', 'elementZinn2', 'elementZinn3', 'textZinn');
+        inhalteButtonAnzeigenVonWebsite('buttonZinn');
     });
     const socket = io("http://192.168.2.183:5000");
-    function inhalteButtonAnzeigenVonWebsite(buttonID, elementRohstoff1, elementRohstoff2, elementRohstoff3, textRohstoff){
+    function inhalteButtonAnzeigenVonWebsite(buttonID){
         // Setze den vorherigen Button zurück, falls einer aktiv ist
         if (activeButton) {
             resetButton(activeButton);
@@ -23,6 +23,11 @@ var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
         activeButton = buttonID;
 
         var button = document.getElementById(buttonID);
+        var elementRohstoff1 = 'element' + buttonID.substring(6) + '1';
+        var elementRohstoff2 = 'element' + buttonID.substring(6) + '2';
+        var elementRohstoff3 = 'element' + buttonID.substring(6) + '3';
+        var textRohstoff = 'text' + buttonID.substring(6);
+
         button.style.backgroundColor = "darkgrey"; // Farbe ändern
 
         document.getElementById(elementRohstoff1).style.display = 'block';
