@@ -13,7 +13,7 @@ var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
     document.getElementById("buttonZinn").addEventListener("click", function() {
         inhalteButtonAnzeigenVonWebsite('buttonZinn', 'elementZinn1', 'elementZinn2', 'elementZinn3', 'textZinn');
     });
-    const socket = io("http://localhost:5000");
+    const socket = io("http://192.168.2.183:5000");
     function inhalteButtonAnzeigenVonWebsite(buttonID, elementRohstoff1, elementRohstoff2, elementRohstoff3, textRohstoff){
         // Setze den vorherigen Button zurück, falls einer aktiv ist
         if (activeButton) {
