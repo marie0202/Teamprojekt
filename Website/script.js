@@ -50,7 +50,7 @@ var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
             resetButton(buttonID);
         }, 10000);
     }
-function inhalteButtonAnzeigenVonPi(buttonID, elementRohstoff1, elementRohstoff2, elementRohstoff3, textRohstoff){
+function inhalteButtonAnzeigenVonPi(buttonID){
     // Setze den vorherigen Button zurück, falls einer aktiv ist
     if (activeButton) {
         resetButton(activeButton);
@@ -62,6 +62,11 @@ function inhalteButtonAnzeigenVonPi(buttonID, elementRohstoff1, elementRohstoff2
     activeButton = buttonID;
 
     var button = document.getElementById(buttonID);
+    var elementRohstoff1 = 'element' + buttonID.substring(6) + '1';
+    var elementRohstoff2 = 'element' + buttonID.substring(6) + '2';
+    var elementRohstoff3 = 'element' + buttonID.substring(6) + '3';
+    var textRohstoff = 'text' + buttonID.substring(6);
+
     button.style.backgroundColor = "darkgrey"; // Farbe ändern
 
     document.getElementById(elementRohstoff1).style.display = 'block';
@@ -83,10 +88,10 @@ socket.on('led_status', function(data) {
         button.style.backgroundColor = "lightgray";
 
         // Alle zugehörigen Inhalte ausblenden
-        document.querySelectorAll("[id^='timerElement" + buttonID.replace('button', '') + "']").forEach(function(el) {
+        document.querySelectorAll("[id^='element" + buttonID.replace('button', '') + "']").forEach(function(el) {
             el.style.display = 'none';
         });
-        document.getElementById("timerText" + buttonID.replace('button', '')).style.display = 'none';
+        document.getElementById("text" + buttonID.replace('button', '')).style.display = 'none';
 
         // Setze die aktiven Variablen zurück
         activeButton = null;
