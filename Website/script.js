@@ -1,5 +1,7 @@
+const socket = io("http://192.168.2.183:5000");
 var activeButton = null; // Speichert den aktuell aktiven Button
 var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
+
 
     document.getElementById("buttonKobalt").addEventListener("click", function() {
         inhalteButtonAnzeigenVonWebsite('buttonKobalt');
@@ -15,7 +17,7 @@ var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
     });
 
     function inhalteButtonAnzeigenVonWebsite(buttonID){
-        const socket = io("http://192.168.2.183:5000");
+
         // Setze den vorherigen Button zurück, falls einer aktiv ist
         if (activeButton) {
             resetButton(activeButton);
