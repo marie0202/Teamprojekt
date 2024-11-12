@@ -1,4 +1,4 @@
-const socket = io("https://192.168.2.112:5000");
+const socket = io("https://192.168.2.113:5000");
 var activeButton = null; // Speichert den aktuell aktiven Button
 var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
 
