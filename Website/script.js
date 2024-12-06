@@ -1,4 +1,4 @@
-const socket = io("http://192.168.2.113:5000");
+const socket = io("http://192.168.2.116:5000");
 var activeButton = null; // Speichert den aktuell aktiven Button
 var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
 
@@ -81,6 +81,15 @@ function inhalteButtonAnzeigenVonPi(buttonID){
         resetButton(buttonID);
     }, 10000);
 }
+
+socket.on('button_pressed', (data) => {
+    const buttonID = data.buttonID;
+    const years = data.years;
+    console.log('button_pressed received:', data);
+    console.log(`${buttonID} wurde gedrückt`);
+    inhalteButtonAnzeigenVonPi(buttonID);
+});
+
 socket.on('led_status', function(data) {
     console.log('LED ${data.button} ist ${data.status}');
     //inhalteButtonAnzeigenVonPi()
