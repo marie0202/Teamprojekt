@@ -1,6 +1,19 @@
-const socket = io("http://192.168.2.113:5000");
+const socket = io("http://192.168.2.116:5000");
 var activeButton = null; // Speichert den aktuell aktiven Button
 var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
+
+socket.on("connect", () => {
+    console.log("Verbunden mit dem Server");
+});
+
+socket.on("server_message", (data) => {
+    console.log("Nachricht erhalten:", data);
+    document.getElementById("output").innerText = data.data;
+});
+
+socket.on("disconnect", () => {
+    console.log("Verbindung getrennt");
+});
 
 
     document.getElementById("buttonKobalt").addEventListener("click", function() {
