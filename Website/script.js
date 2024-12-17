@@ -94,6 +94,15 @@ function inhalteButtonAnzeigenVonPi(buttonID){
         resetButton(buttonID);
     }, 10000);
 }
+
+socket.on('button_pressed', (data) => {
+    const buttonID = data.buttonID;
+    const years = data.years;
+    console.log('button_pressed received:', data);
+    console.log(`${buttonID} wurde gedrückt`);
+    inhalteButtonAnzeigenVonPi(buttonID);
+});
+
 socket.on('led_status', function(data) {
     console.log('LED ${data.button} ist ${data.status}');
     //inhalteButtonAnzeigenVonPi()

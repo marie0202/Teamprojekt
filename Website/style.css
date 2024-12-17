@@ -15,7 +15,7 @@ p{
     text-align: justify;
     width: 97%;
 }
-#buttonKobalt, #buttonTantal, #buttonWolfram, #buttonZinn {
+.buttons {
     background-color: lightgray; /* Standardfarbe */
     padding: 10px 20px;
     border: black;
@@ -41,7 +41,7 @@ p{
     display: block; /* InfoBox immer sichtbar*/
 }
 #infoBox {
-    width: 50%; /* Breite auf 20% gesetzt */
+    width: 50%; /* Breite*/
     gap: 5px; /* Abstand zwischen Bild und Text */
 }
 #mapContainer{
@@ -58,52 +58,48 @@ p{
     text-align: justify;
     width: 90%;
 }
-#elementKobalt1, #elementTantal2{
+/* in Klasse hier kann Farbe, Schriftart, ... aller LänderTexte geändert werden*/
+.laenderText {
     position: absolute;
+    display: none;
+}
+/* Position Dem. Rep Kongo */
+#elementKobalt1, #elementTantal2 {
     bottom: 36%; /* vom oberen Rand des Containers */
     left: 50%; /* vom linken Rand des Containers */
-    display: none;
-    width: 10%; /* ür Zeilenumbruch */
 }
+/* Position China */
 #elementKobalt2, #elementWolfram1, #elementZinn1{
-    position: absolute;
     bottom: 62%;
     left: 78%;
-    display: none;
 }
+/* Position Russland */
 #elementKobalt3, #elementWolfram3{
-    position: absolute;
     bottom: 80%;
     left: 67%;
-    display: none;
 }
+/* Position Ruanda */
 #elementTantal1{
-    position: absolute;
     bottom: 45%;
     left: 54%;
-    display: none;
 }
+/* Position Brasilien */
 #elementTantal3{
-    position: absolute;
     bottom: 32%;
     left: 25%;
-    display: none;
 }
+/* Position Vietnam */
 #elementWolfram2{
-    position: absolute;
     bottom: 49%;
     left: 83%;
-    display: none;
 }
+/* Position Indonesien */
 #elementZinn2{
-    position: absolute;
     bottom: 34%;
     left: 80%;
-    display: none;
 }
+/* Position Peru */
 #elementZinn3{
-    position: absolute;
     bottom: 28%;
     left: 18%;
-    display: none;
 }
