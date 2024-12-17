@@ -7,8 +7,9 @@ socket.on("connect", () => {
 });
 
 socket.on("server_message", (data) => {
+    console.log("Methode wurde aufgerufen")
     console.log("Nachricht erhalten:", data);
-    document.getElementById("output").innerText = data.data;
+    //document.getElementById("data").innerText = data.data;
 });
 
 socket.on("disconnect", () => {
