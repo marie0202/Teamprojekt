@@ -78,42 +78,42 @@ p{
 /* Position Dem. Rep Kongo */
 #elementKobalt1, #elementTantal2 {
     bottom: 36%; /* vom oberen Rand des Containers */
-    left: 50%; /* vom linken Rand des Containers */
+    left: 32%; /* vom linken Rand des Containers */
 }
 /* Position China */
 #elementKobalt2, #elementWolfram1, #elementZinn1{
     bottom: 62%;
-    left: 78%;
+    left: 52%;
 }
 /* Position Russland */
 #elementKobalt3, #elementWolfram3{
     bottom: 80%;
-    left: 67%;
+    left: 47%;
 }
 /* Position Ruanda */
 #elementTantal1{
-    bottom: 45%;
-    left: 54%;
+    bottom: 38%;
+    left: 37%;
 }
 /* Position Brasilien */
 #elementTantal3{
     bottom: 32%;
-    left: 25%;
+    left: 16%;
 }
 /* Position Vietnam */
 #elementWolfram2{
     bottom: 49%;
-    left: 83%;
+    left: 53%;
 }
 /* Position Indonesien */
 #elementZinn2{
-    bottom: 34%;
-    left: 80%;
+    bottom: 35%;
+    left: 54%;
 }
 /* Position Peru */
 #elementZinn3{
-    bottom: 28%;
-    left: 18%;
+    bottom: 29%;
+    left: 12%;
 }
 
 #contentContainer {
@@ -155,9 +155,18 @@ button.inactive {
 } /* Diese Stile können entfernt werden, falls Bulma-Button-Klassen direkt verwendet werden */
 
 .buttons {
-    /*display: flex; /* Flexbox aktivieren */
-    /*justify-content: center; /* Buttons horizontal mittig ausrichten */
-    gap: 5px; /* Optional: Abstand zwischen den Buttons */
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Buttons horizontal mittig ausrichten */
+    gap: 40px; /* Optional: Abstand zwischen den Buttons */
+    padding-bottom: 20px; /* Innenabstand unten */
+}
+
+#prototyp {
+    width: 70%;
+    max-width: none; /* Deaktiviert Standardwerte */
+    height: auto;    /* Erhält die Proportionen */
+    display: block;  /* Damit margin:auto auf block-level-Elemente wirkt */
+    margin: 0 auto;
 }
 
 
