@@ -14,10 +14,10 @@
     font-weight: bold;
     font-size: 1.2rem;
     color: black;
-    font-family: 'Poppins', sans-serif; /* Schriftart anpassen */
-    background-color: lightgray; /* Gleicher Hintergrund wie die Navigation */
+    font-family: 'Poppins', sans-serif;
+    background-color: lightgray;
     display: inline-block;
-    padding: 15px; /* Optionaler Abstand für besseren Look */
+    padding: 15px;
 }
 
 .navbar-text {
@@ -33,7 +33,7 @@
 /* Styling für die Navigations-Links */
 .navbar-end {
     display: flex;
-    gap: 15px; /* Abstand zwischen den Links */
+    gap: 15px;
     margin-right: 35px;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .section {
-    padding: 20px; /* Beispiel für Padding */
+    padding: 20px;
 }
 
 p{
@@ -57,19 +57,11 @@ p{
     width: 100%;
 }
 
-#mapContainer{
-    width: 65%;
-    position: relative; /* Macht das Bild zum relativen Referenzpunkt */
-    display: inline-block; /* Container passt sich der Höhe des Bildes an */
-}
-
 #weltkarte{
     width: 100%;
     float: left;
 }
 
-
-/* in Klasse hier kann Farbe, Schriftart, ... aller LänderTexte geändert werden*/
 .laenderText {
     position: absolute;
     display: none;
@@ -77,8 +69,8 @@ p{
 
 /* Position Dem. Rep Kongo */
 #elementKobalt1, #elementTantal2 {
-    bottom: 36%; /* vom oberen Rand des Containers */
-    left: 32%; /* vom linken Rand des Containers */
+    bottom: 36%;
+    left: 32%;
 }
 /* Position China */
 #elementKobalt2, #elementWolfram1, #elementZinn1{
@@ -116,56 +108,28 @@ p{
     left: 12%;
 }
 
-#contentContainer {
-    display: flex; /* Stellt die Inhalte nebeneinander */
-    align-items: flex-start; /* Text und Bild oben ausrichten */
-    gap: 5px; /* oder 1rem Abstand zwischen Bild und Text */
-    width: 100%;
-}
-#textContainer {
-    width: 35%; /* Textcontainer nimmt 35% der Breite */
-    padding-left: 20px; /* oder 1.5 rem Abstand zwischen Bild und Text */
-    text-align: justify;
-}
-#textContainer div {
-    hyphens: auto;
-    display: none; /* Texte sollen wie gehabt nur sichtbar sein, wenn sie aufgerufen werden */
-}
-#textContainer .alwaysVisible{
-    display: block; /* InfoBox immer sichtbar*/
-}
-#infoBox {
-    width: 50%; /* Breite*/
-    gap: 5px; /* oder weg Abstand zwischen Bild und Text */
-}
-
-/* ChatGPT neu*/
-/* Hintergrundfarben und Standarddesign für Buttons, falls abweichend von Bulma */
 button {
     margin: 0.5rem;
 }
 
-/* Anpassung von Button-Farben, falls nötig */
 button.active {
     background-color: darkgrey;
 }
 
 button.inactive {
     background-color: lightgrey;
-} /* Diese Stile können entfernt werden, falls Bulma-Button-Klassen direkt verwendet werden */
+}
 
 .buttons {
-    display: flex; /* Flexbox aktivieren */
-    justify-content: center; /* Buttons horizontal mittig ausrichten */
-    gap: 40px; /* Optional: Abstand zwischen den Buttons */
-    padding-bottom: 20px; /* Innenabstand unten */
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding-bottom: 20px;
 }
 
 #prototyp {
     width: 70%;
-    max-width: none; /* Deaktiviert Standardwerte */
-    height: auto;    /* Erhält die Proportionen */
-    display: block;  /* Damit margin:auto auf block-level-Elemente wirkt */
+    height: auto;
     margin: 0 auto;
 }
 
