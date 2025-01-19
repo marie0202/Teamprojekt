@@ -1,15 +1,52 @@
-nav a {
-    color: black;
-    text-decoration: none; /* Entfernt die Unterstreichung */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* Styling für die Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: lightgray;
-    font-weight: bold; /* Macht den Text fett */
-    padding: 10px 20px; /* Fügt Innenabstände um die Links hinzu */
-    cursor: pointer;
-    margin: 10px;
+    padding: 10px 20px;
 }
-nav a:visited {
-    color: inherit; /* Setzt die Farbe auf die Standardfarbe zurück */
+
+/* Styling für den linken Text */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: black;
+    font-family: 'Poppins', sans-serif; /* Schriftart anpassen */
+    background-color: lightgray; /* Gleicher Hintergrund wie die Navigation */
+    display: inline-block;
+    padding: 15px; /* Optionaler Abstand für besseren Look */
 }
+
+.navbar-text {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: lightgray;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Styling für die Navigations-Links */
+.navbar-end {
+    display: flex;
+    gap: 15px; /* Abstand zwischen den Links */
+}
+
+.navbar-item {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* alt */
 p{
     hyphens: auto;
     text-align: justify;
