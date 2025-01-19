@@ -34,6 +34,7 @@
 .navbar-end {
     display: flex;
     gap: 15px; /* Abstand zwischen den Links */
+    margin-right: 35px;
 }
 
 .navbar-item {
@@ -46,60 +47,34 @@
     transition: background-color 0.3s;
 }
 
-/* alt */
+.section {
+    padding: 20px; /* Beispiel für Padding */
+}
+
 p{
     hyphens: auto;
     text-align: justify;
-    width: 97%;
-}
-.buttons {
-    background-color: lightgray; /* Standardfarbe */
-    padding: 10px 20px;
-    border: black;
-    cursor: pointer;
-    margin: 10px;
-}
-#contentContainer {
-    display: flex; /* Stellt die Inhalte nebeneinander */
-    align-items: flex-start; /* Text und Bild oben ausrichten */
-    gap: 5px; /* Abstand zwischen Bild und Text */
     width: 100%;
 }
-#textContainer {
-    width: 35%; /* Textcontainer nimmt 35% der Breite */
-    padding-left: 20px; /* Abstand zwischen Bild und Text */
-    text-align: justify;
-}
-#textContainer div {
-    hyphens: auto;
-    display: none; /* Texte sollen wie gehabt nur sichtbar sein, wenn sie aufgerufen werden */
-}
-#textContainer .alwaysVisible{
-    display: block; /* InfoBox immer sichtbar*/
-}
-#infoBox {
-    width: 50%; /* Breite*/
-    gap: 5px; /* Abstand zwischen Bild und Text */
-}
+
 #mapContainer{
     width: 65%;
     position: relative; /* Macht das Bild zum relativen Referenzpunkt */
     display: inline-block; /* Container passt sich der Höhe des Bildes an */
 }
+
 #weltkarte{
     width: 100%;
     float: left;
 }
-#textKobalt, #textTantal, #textWolfram, #textZinn{
-    hyphens: auto;
-    text-align: justify;
-    width: 90%;
-}
+
+
 /* in Klasse hier kann Farbe, Schriftart, ... aller LänderTexte geändert werden*/
 .laenderText {
     position: absolute;
     display: none;
 }
+
 /* Position Dem. Rep Kongo */
 #elementKobalt1, #elementTantal2 {
     bottom: 36%; /* vom oberen Rand des Containers */
@@ -140,3 +115,53 @@ p{
     bottom: 28%;
     left: 18%;
 }
+
+#contentContainer {
+    display: flex; /* Stellt die Inhalte nebeneinander */
+    align-items: flex-start; /* Text und Bild oben ausrichten */
+    gap: 5px; /* oder 1rem Abstand zwischen Bild und Text */
+    width: 100%;
+}
+#textContainer {
+    width: 35%; /* Textcontainer nimmt 35% der Breite */
+    padding-left: 20px; /* oder 1.5 rem Abstand zwischen Bild und Text */
+    text-align: justify;
+}
+#textContainer div {
+    hyphens: auto;
+    display: none; /* Texte sollen wie gehabt nur sichtbar sein, wenn sie aufgerufen werden */
+}
+#textContainer .alwaysVisible{
+    display: block; /* InfoBox immer sichtbar*/
+}
+#infoBox {
+    width: 50%; /* Breite*/
+    gap: 5px; /* oder weg Abstand zwischen Bild und Text */
+}
+
+/* ChatGPT neu*/
+/* Hintergrundfarben und Standarddesign für Buttons, falls abweichend von Bulma */
+button {
+    margin: 0.5rem;
+}
+
+/* Anpassung von Button-Farben, falls nötig */
+button.active {
+    background-color: darkgrey;
+}
+
+button.inactive {
+    background-color: lightgrey;
+} /* Diese Stile können entfernt werden, falls Bulma-Button-Klassen direkt verwendet werden */
+
+.buttons {
+    /*display: flex; /* Flexbox aktivieren */
+    /*justify-content: center; /* Buttons horizontal mittig ausrichten */
+    gap: 5px; /* Optional: Abstand zwischen den Buttons */
+}
+
+
+
+
+
+
