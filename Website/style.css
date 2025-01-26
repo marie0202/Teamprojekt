@@ -65,6 +65,7 @@ p{
 .laenderText {
     position: absolute;
     display: none;
+    font-weight: bold;
 }
 
 /* Position Dem. Rep Kongo */
