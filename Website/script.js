@@ -1,5 +1,5 @@
 //SocketIo Verbindung
-const socket = io("http://192.168.2.140:5000");
+const socket = io("http://raspberrypi.local:5000");
 var activeButton = null; // Speichert den aktuell aktiven Button
 var timeoutID = null;    // Speichert das Timeout, um es später zu löschen
 
