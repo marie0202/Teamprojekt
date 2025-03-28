@@ -65,7 +65,7 @@ function inhalteButtonAnzeigen(buttonID, fromWebsite) {
     // Setze das Timeout, um den Button zurückzusetzen
     timeoutID = setTimeout(function() {
         resetButton(buttonID);
-    }, 10000);
+    }, 8000);
 }
 //Reset Funktion
 function resetButton(buttonID) {
